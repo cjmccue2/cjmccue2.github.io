@@ -1,0 +1,78 @@
+[meta title:"IS 445 HW 10" description:"IS 445 HW 10" /]
+
+[Header
+  fullWidth:true
+  title:"IS 445 HW 10"
+  author:"Connor McCue"
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+[var name:"x" value:0 /]
+
+
+
+I will be using an altered dataset I had saved on my computer, a dataset of France's agricultural imports/exports in 2009
+
+
+[data name: "FranceImportExport" source: "iamtired.csv" /]
+
+[Table data:FranceImportExport /]
+
+
+Making sure data loaded
+
+
+[Chart type: "bar" data:`FranceImportExport.slice(0,5)` domain: `[0,5]` range: `null` x:"Item" y:"Value" /]
+
+[var name:"radioType" value:"Element" /]
+[Radio value: ratioType options:`["Export Quantity", "Import Quanity"]` /]
+
+
+[var name:"myRange" value:25 /]
+[Range value:myRange min:0 max:25 /]
+[Display value:myRange /] Items shown
+
+[var name:"selectUnit" value:"tonnes" /]
+[Select value:selectUnit options:`["tonnes", "Head by 1000"]` /]
+
+
+
+[var name:"textItem" value:"Enter Desired Item" /]
+[TextInput value:textItem /]
+
+
+
+
+
+
+For this assignment, I decided to use a dataset I am analyzing for an in progress research paper I am writing in another course. The dataset I am using is the quantity of France's agricultural imports/exports in 2009. The original dataset is quite large, so I decided to make my own dataset looking at the top 25 entries based on quantity. I struggled to find a working method utilizing Vega-Lite with Idyll. I know there were some problems using Vega-lite in Idyll in lecture, but I felt it was more intuitive to me than d3.js. That was my first approach, or rather, Option 1 outlined in the assignment description. I briefly considered Option 2, using d3.js, but I ultimately landed on Option 3 for this assignment. 
+
+
+I had some difficulties formatting the bar chart from Idyll's 'built in' components. The documentation wasn't too extensive, and I couldn't find many examples online that answered the questions I had. This led my graph to be quite simple. If I added more than 5 entries, the labels on the x axis would converge and it would be hard to read which bar was which. I also didn't know how to alter figsize in Idyll/HTML. This is why you can't really see the values on the y axis. For the interactive 'built in' components in Idyll, I was able to get them to display what I wanted, but I couldn't figure out how to link them to my values in the figure.
+
+
+
+I wanted to be able to filter between exports and imports to see which areas were the highest value in their respective category (radio boxes). I also thought it would be nice to change the amount of items displayed on the graph (range). My next idea was to give the audience the option to look at one specific item if they desired(TextInput). Finally, I added a dropdown menu to filter between items categorized by tonnes and by Head since in my dataset there were entries for both.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
